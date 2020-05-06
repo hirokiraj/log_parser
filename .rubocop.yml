@@ -1,0 +1,23 @@
+require:
+  - rubocop-rspec
+
+Layout/LineLength:
+  Max: 120
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+
+# RSpec uses block based DSL
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+# We are not hitting db in specs so we can safely disable
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+# Due to changes in rubocop versioning
+# see https://docs.rubocop.org/en/latest/versioning/
+AllCops:
+  NewCops: enable
